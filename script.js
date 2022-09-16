@@ -3,15 +3,16 @@ var optionsUp = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P"
 var optionsLow = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 var optionsNum = [0,1,2,3,4,5,6,7,8,9]
 var optionsSpecial = ["!","#","$","%","&","(",")","*","+","-",".","/",":",";","<","?","@","[","]","^","|","~"]
-var allCharacters = []
 
 function generatePassword() {
+  var allCharacters = []
   var optionsLength = prompt("How long do you want the password to be? Password must be between 8 and 128 characters.");
   var length = parseInt(optionsLength);
 
   if(length < 8 || length > 128){
     alert("Invalid length. Length must be between 8 and 128 characters.");
-    return null;
+    // return null;
+    generatePassword()
   }
   var confUp = confirm("Do you want uppercase letters?")
   var confLow = confirm("Do you want lowercase letters?")
