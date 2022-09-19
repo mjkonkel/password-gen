@@ -1,46 +1,46 @@
 
-var optionsUp = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-var optionsLow = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-var optionsNum = [0,1,2,3,4,5,6,7,8,9]
-var optionsSpecial = ["!","#","$","%","&","(",")","*","+","-",".","/",":",";","<","?","@","[","]","^","|","~"]
-var allCharacters = []
+var optionsUp = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var optionsLow = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var optionsNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+var optionsSpecial = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":", ";", "<", "?", "@", "[", "]", "^", "|", "~"]
 
 function generatePassword() {
+  var allCharacters = []
   var optionsLength = prompt("How long do you want the password to be? Password must be between 8 and 128 characters.");
   var length = parseInt(optionsLength);
 
-  if(length < 8 || length > 128){
+  if (length < 8 || length > 128) {
     alert("Invalid length. Length must be between 8 and 128 characters.");
     return null;
   }
+
   var confUp = confirm("Do you want uppercase letters?")
   var confLow = confirm("Do you want lowercase letters?")
   var confNum = confirm("Do you want numbers?")
   var confSpecial = confirm("Do you want special characters?")
-  console.log(length,confUp,confLow,confNum,confSpecial)
-  if(confUp){
+  console.log(length, confUp, confLow, confNum, confSpecial)
+  if (confUp) {
     allCharacters = allCharacters.concat(optionsUp)
   }
-  if(confLow){
+  if (confLow) {
     allCharacters = allCharacters.concat(optionsLow)
   }
-  if(confNum){
+  if (confNum) {
     allCharacters = allCharacters.concat(optionsNum)
   }
-  if(confSpecial){
+  if (confSpecial) {
     allCharacters = allCharacters.concat(optionsSpecial)
   }
   console.log(allCharacters)
 
   var result = []
-  for(var i = 0; i < length; i++){
+  for (var i = 0; i < length; i++) {
     var randIndex = Math.random() * allCharacters.length;
     var randInt = Math.floor(randIndex);
-    result.push(allCharacters[randInt])
+    result.push(allCharacters[randInt]);
   }
   console.log(result)
   return result.join('');
-
 }
 
 
@@ -54,7 +54,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  
+
 }
 
 
