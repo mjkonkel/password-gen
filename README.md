@@ -10,7 +10,7 @@ N/A
  
 ## Usage
 
-[Link to deployed website.](https://mjkonkel.github.io/C3-password/)
+[Link to deployed website.](https://mjkonkel.github.io/password-gen/)
 
 > To begin generating a password, click the Generate Password button at the bottom of the screen.
 ![image of password generator application](images/password-main.jpg)
